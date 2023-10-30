@@ -3,14 +3,15 @@ server:
 
 spring:
   datasource:
-    url:
+    url: jdbc:mysql://localhost:3306/citizen
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    database-platform : org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
-    show-sql: ture
+    show-sql: true
 
   application:
     name: CITIZEN-SERVICE

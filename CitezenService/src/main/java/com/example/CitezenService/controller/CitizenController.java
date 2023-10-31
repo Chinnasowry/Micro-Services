@@ -11,8 +11,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("citizen")
 public class CitizenController {
 
-    @GetMapping("get")
-    public ResponseEntity<Citizen> getCitizen(){
-        return null;
-    }
+
 }

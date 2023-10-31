@@ -3,6 +3,7 @@ package com.example.CitezenService.controller;
 
 import com.example.CitezenService.entity.Citizen;
 import com.example.CitezenService.repository.CitizenRepo;
+import com.example.CitezenService.repository.HomeRepository;
 import com.example.CitezenService.service.CitizenService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,15 @@ public class CitizenController {
     CitizenRepo repo;
 
     @Autowired
+    HomeRepository repository;
+
+    @Autowired
     CitizenService service;
 
-    @GetMapping("/get/{id}")
-    public Optional<List<Citizen>> getCitizen(@PathVariable int id){
+    @GetMapping("/get/{pass}")
+    public ResponseEntity<Citizen> getCitizen(@PathVariable Integer pass){
 //        return new ResponseEntity<>(repo.findById(id.getId())., HttpStatus.OK);
-        return repo.findById(id);
+        return new ResponseEntity<>(repository.findById(pass).get(), HttpStatus.OK);
     }
 
     @GetMapping("/vaccination/{id}")

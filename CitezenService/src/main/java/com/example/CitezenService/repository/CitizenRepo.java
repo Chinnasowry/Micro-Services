@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface CitizenRepo extends CrudRepository<Citizen, Integer> {
-    Optional<List<Citizen>> findById(int id);
+    Citizen findById(int id);
 
     public List<Citizen> findByVaccinationCenterId(int id);
 }

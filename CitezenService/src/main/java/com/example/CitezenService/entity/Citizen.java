@@ -17,7 +17,7 @@ public class Citizen {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer citizenId;
+    private Integer id;
 
     private String name;
 

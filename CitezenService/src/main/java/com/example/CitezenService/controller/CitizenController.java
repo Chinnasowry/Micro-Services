@@ -33,6 +33,10 @@ public class CitizenController {
         return new ResponseEntity<>(repository.findById(pass).get(), HttpStatus.OK);
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<Citizen>> getAllCitizens(){
+        return new ResponseEntity<>(repository.findAll(), HttpStatus.OK);
+    }
     @GetMapping("/vaccination/{id}")
     public ResponseEntity<List<Citizen>> getById(@PathVariable int id){
         return new ResponseEntity<>(repo.findByVaccinationCenterId(id), HttpStatus.OK);
